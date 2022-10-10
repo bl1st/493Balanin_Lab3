@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_graphs"
+        android:title="Выбрать граф" />
+    <item
+        android:id="@+id/item_changeName"
+        android:title="Изменить имя гарфа" />
+    <item
+        android:id="@+id/item_copyGraph"
+        android:title="Копировать граф" />
+    <item
+        android:id="@+id/item_deleteGraph"
+        android:title="Удалить граф" />
+</menu>
