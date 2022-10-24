@@ -17,12 +17,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
 public class Activity_Graphs extends AppCompatActivity {
-
+   //493 balanin
     DB db;
     ListView lv;
     List<Graph> gList;
@@ -31,35 +32,27 @@ public class Activity_Graphs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graphs);
-
         db = new DB(this,"Graphs.db",null, 1);
-
         gList= db.getGraphsList();
         adp = new ArrayAdapter<Graph>(this,
                 android.R.layout.simple_list_item_1, gList);
-
         lv = findViewById(R.id.lv_graphs);
         lv.setAdapter(adp);
-
         lv.setOnItemClickListener(
                 new AdapterView.OnItemClickListener()
                 {
                     @Override
                     public void onItemClick(AdapterView<?> arg0, View view,
                                             int position, long id) {
-                        int graphID = adp.getItem(position).id; //adrp get item returns graph which contains id field
+                        int graphID = adp.getItem(position).id;
                         Intent i = new Intent();
                         i.putExtra("graphID",graphID);
                         setResult(RESULT_OK,i);
                         finish();
-
                     }
                 }
         );
-
-    }
-
-
+    } //493 balanin
     public void onButtonCreate_Click(View v){
         //MessageBox - tv with name (ok,cancel)
         final String[] name = new String[1];
@@ -73,22 +66,17 @@ public class Activity_Graphs extends AppCompatActivity {
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 name[0] = input.getText().toString();
-                // Do something with value!
-
                 Graph g = new Graph();
                 g.Name = name[0];
-                g.ts = (int)(System.currentTimeMillis() /1000);
+                g.ts = new Date().getTime();
                 int id =db.addGraph(g);
                 g.id = id;
                 gList.add(g);
                 adp.notifyDataSetChanged();
             }
-        });
-
+        }); //493 balanin
         alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-
-            }
+            public void onClick(DialogInterface dialog, int whichButton) { }
         });
         alert.show();
 

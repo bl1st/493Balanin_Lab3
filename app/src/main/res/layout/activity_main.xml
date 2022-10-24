@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="302dp"
+        android:layout_width="297dp"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -44,6 +44,20 @@
             android:text="Add link" />
 
         <Button
+            android:id="@+id/btn_LinkText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonEditLink_Click"
+            android:text="Edit link text" />
+
+        <Button
+            android:id="@+id/btn_renameNode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonRenameNode_Click"
+            android:text="rename node" />
+
+        <Button
             android:id="@+id/btn_saveGraph"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,13 +70,6 @@
             android:layout_height="wrap_content"
             android:onClick="onButtonClear_Click"
             android:text="clear" />
-
-        <Button
-            android:id="@+id/btn_renameNode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onButtonRenameNode_Click"
-            android:text="rename node" />
 
     </LinearLayout>
 

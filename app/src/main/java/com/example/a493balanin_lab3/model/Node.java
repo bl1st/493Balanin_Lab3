@@ -1,7 +1,7 @@
 package com.example.a493balanin_lab3.model;
 
 public class Node {
-
+//493 balanin
     public float x,y;
     public String text;
 

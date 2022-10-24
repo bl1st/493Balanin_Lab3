@@ -2,9 +2,9 @@ package com.example.a493balanin_lab3.model;
 
 public class Link {
     public int a,b;
-    public String text;
+    public float value;
     public float x0,x1,y0,y1; //квадрат для нажатия
-
+//493balanin
    public Link(int x, int y){
        a = x;
        b = y;
@@ -19,13 +19,14 @@ public class Link {
        this.y1 = y1;
    }
 
-   public void setText(String text){
 
-       this.text = text;
-   }
 
    public boolean squareIsTouched(float x,float y)
    {
        return x > x0 && x < x1 && y > y0 && y < y1;
+   }
+
+   public void setValue(float value){
+       this.value = value;
    }
 }
